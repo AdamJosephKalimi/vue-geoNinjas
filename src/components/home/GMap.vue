@@ -28,6 +28,7 @@ export default {
     },
     mounted() {
         console.log(firebase.auth().currentUser)
+        // console.log("Yes")
         this.renderMap()
     }
 }

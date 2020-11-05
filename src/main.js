@@ -14,12 +14,15 @@ let app = null
 
 firebase.auth().onAuthStateChanged(() => {
 
-  /* eslint-disable no-new */
-  app = new Vue({
-    el: '#app',
-    router,
-    components: { App },
-    template: '<App/>'
-  })
+  if(!app){
+    /* eslint-disable no-new */
+    app = new Vue({
+      el: '#app',
+      router,
+      components: { App },
+      template: '<App/>'
+    })
+  }
+  
 
 })
