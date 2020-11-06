@@ -17,15 +17,37 @@ export default {
         }
     },
     methods: {
-        renderMap() {
-            const map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: this.lat, lng: this.lng},
-                zoom: 6,
-                maxZoom: 15,
-                minZoom: 3,
-                streetViewControl: false
-            })
-        }
+			renderMap() {
+				const map = new google.maps.Map(document.getElementById('map'), {
+						center: {lat: this.lat, lng: this.lng},
+						zoom: 6,
+						maxZoom: 15,
+						minZoom: 3,
+						streetViewControl: false
+				})
+				db.collection('users').get().then(users => {
+					users.docs.forEach(doc => {
+						// the data() function on the next line is how we get the data from the document
+						let data = doc.data()
+						// compare the difference between doc and data below
+						// console.log("Doc: ", doc)
+						// console.log("Data: ", data)
+						if(data.geolocation) {
+							let marker = new google.maps.Marker({
+								position: {
+									lat: data.geolocation.lat,
+									lng: data.geolocation.lng
+								},
+								map
+							})
+							// add click event to marker
+							marker.addListener('click', () => {
+								console.log(doc.id)
+							})
+						}
+					})
+				})
+			}
     },
     mounted() {
         // get current user
