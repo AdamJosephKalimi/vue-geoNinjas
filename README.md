@@ -1,7 +1,7 @@
 # geo-ninjas
 
-> A Vue.js project implementing Firebase BaaS.
-Features: User signup and login, user geolocation on map, user profile page with real-time comments.
+> A Vue.js project implementing Firebase BaaS.<br />
+Features: User signup and login, user geolocation on map, user profile page with real-time comments.<br />
 URL: https://udemy-geo-ninjas-4713c.web.app/signup
 
 ## Build Setup
