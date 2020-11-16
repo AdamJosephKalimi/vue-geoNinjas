@@ -2,7 +2,7 @@
 
 > A Vue.js project implementing Firebase BaaS.<br />
 Features: User signup and login, user geolocation on map, user profile page with real-time comments.<br />
-URL: https://udemy-geo-ninjas-4713c.web.app/signup
+URL: https://udemy-geo-ninjas-4713c.web.app/
 
 ## Build Setup
 
